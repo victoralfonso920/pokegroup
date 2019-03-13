@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">pokegroup</string>
+    <string name="request_client_id">783762743706-l4embaje2pfh1i3u8tdgjb9n7m5ah6sn.apps.googleusercontent.com</string>
+
+    <string name="facebook_app_id">1877661409030368</string>
+    <string name="fb_login_protocol_scheme">fb1877661409030368</string>
+    <string name="iniciar_sesi_n_con_google">Iniciar sesión con Google</string>
+    <string name="iniciar_sesi_n_con_facebook">Iniciar sesión con Facebook</string>
+    <string name="crea_tus_grupos_de_pokemon">Crea tus grupos de pokemon</string>
+    <string name="estas_listo">Estas listo</string>
+    <string name="pokegroup">PokeGroup</string>
+    <string name="oscuro">Tema oscuro</string>
+    <string name="claro">Tema normal</string>
+    <string name="regiones_pokemon">Regiones pokemon</string>
+    <string name="opciones">Opciones</string>
+    <string name="menu">Menu</string>
+    <string name="grupos">Grupos</string>
+    <string name="pokemons">Pokemons</string>
+    <string name="regiones">Regiones</string>
+    <string name="hola">Hola</string>
+    <string name="tema">Tema</string>
+    <string name="no_posees_conexi_n">No posees conexión</string>
+    <string name="tu_conexi_n">Tu conexión a internet es debil, o no tienes conexión. verifica tu conexion e intenta
+        nuevamente
+    </string>
+    <string name="continuar">Continuar</string>
+    <string name="regresar">Regresar</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="pokemons_de_la_region">Pokemons de la Region</string>
+    <string name="no_existen_datos_de_esta_region">No existen datos de esta Region</string>
+    <string name="pokedex">Pokedex</string>
+    <string name="pokemon_all">Todos los pokemon</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="help1">Menu de cambios de temas de la app y opcion de mostrar todos los pokemos existentes o grupos creados</string>
+    <string name="help2">Puedes seleccionar regiones y ver los pokemon por cada region</string>
+    <string name="help3">Puedes revisar tu perfil y \ncerrar tu sesión</string>
+</resources>

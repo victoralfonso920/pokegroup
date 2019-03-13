@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/contenedor"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+    <RelativeLayout
+            android:id="@+id/CardCupon"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+    >
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                           android:id="@+id/CardCuponExelente"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:layout_margin="@dimen/_5sdp"
+                                           android:padding="@dimen/_10sdp"
+                                           android:visibility="visible"
+                                           app:cardBackgroundColor="@color/blanco"
+                                           app:cardCornerRadius="@dimen/_20sdp"
+                                           app:cardElevation="@dimen/_5sdp"
+        >
+
+            <RelativeLayout
+                    android:id="@+id/constraintActivado"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+            >
+                <ImageView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_pokeball"/>
+                <ImageView
+                        android:id="@+id/ImgRegion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:layout_margin="@dimen/_minus5sdp"
+                />
+                <LinearLayout
+                        android:id="@+id/linReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:gravity="center"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sombra"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                >
+
+                    <TextView
+                            android:id="@+id/textNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:textColor="@color/blanco"
+                            android:visibility="visible"
+                            android:textSize="@dimen/_15sdp"
+                    />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+                android:id="@+id/ProgressBarCompra"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+        />
+    </RelativeLayout>
+
+</LinearLayout>

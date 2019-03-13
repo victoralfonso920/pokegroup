@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#E85350</color>
+    <color name="colorAccent">#efb810</color>
+
+    <color name="celeste">#0e7cd1</color>
+    <color name="azulado">#2588E7</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro">#000000</color>
+    <color name="negro_grafito">#1c1c1c</color>
+    <color name="sombra">#801c1c1c</color>
+    <color name="negrofondo">#66000000</color>
+    <color name="negrotext">#fd313030</color>
+    <color name="grisombra">#ebefef</color>
+    <color name="text">#8d9697</color>
+    <color name="dorado">#ffd700</color>
+    <color name="verde">#5DD686</color>
+    <color name="rojo">#F05C90</color>
+    <color name="azul">#4976E3</color>
+    <color name="morado">#A660F2</color>
+    <color name="naranja">#F86A20</color>
+    <color name="ocre">#9B0E5C</color>
+    <color name="rosado">#D669A6</color>
+
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+    <color name="Red">#FF0000</color>
+    <color name="redball">#E85350</color>
+    <color name="green">#3FCD83</color>
+    <color name="purple">#C469E3</color>
+    <color name="blue">#7E8DEF</color>
+    <color name="trasparent_help">#7F000000</color>
+
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Views.MainActivity">
+    <ImageView
+            android:id="@+id/fondo"
+            android:layout_width="match_parent"
+            android:background="@drawable/background_gradient"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center|bottom"
+                android:layout_weight="0.8">
+            <ImageView
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo"/>
+            <ImageView
+                    android:id="@+id/pokeball"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_pokeball"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="0.9"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="8dp"
+        >
+            <TextView
+                    android:id="@+id/textSesion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iniciar_sesion"
+                    android:padding="@dimen/_3sdp"
+                    android:textSize="@dimen/_13sdp"/>
+
+            <com.facebook.login.widget.LoginButton
+                    android:id="@+id/btnFacebookD"
+                    android:layout_width="@dimen/_205sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_11sdp"
+                    android:paddingBottom="@dimen/_11sdp"
+                    android:visibility="gone"
+                    tools:ignore="RtlHardcoded,RtlSymmetry"/>
+            <Button
+                    android:id="@+id/btnFacebook"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/corner_shape_face"
+                    android:drawableStart="@drawable/ic_facebook"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="@string/iniciar_sesi_n_con_facebook"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blanco"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="RtlSymmetry"/>
+
+            <Button
+                    android:id="@+id/btnGoogle"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/corner_shape_google"
+                    android:drawableStart="@drawable/ic_google"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="@string/iniciar_sesi_n_con_google"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blanco"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="RtlSymmetry"/>
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.2"
+                android:layout_height="0dp"
+                android:gravity="center">
+            <TextView
+                    android:id="@+id/textoptions"
+                    android:textColor="@color/text"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/oscuro"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_height="wrap_content"
+            />
+
+            <com.victordev.pokegroup.utils.NightModeButton
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:id="@+id/btn_switch_home"
+            />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

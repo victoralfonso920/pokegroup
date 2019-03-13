@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "783762743706",
+    "firebase_url": "https://pokegroup-bfbc6.firebaseio.com",
+    "project_id": "pokegroup-bfbc6",
+    "storage_bucket": "pokegroup-bfbc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783762743706:android:696e85499ace5451",
+        "android_client_info": {
+          "package_name": "com.victordev.pokegroup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783762743706-b9jnpcfp7uaegtvh4g7vhf0oltt8dlre.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victordev.pokegroup",
+            "certificate_hash": "a081fae16d0f5355d6230de2fb8a0eaab3d4b5e7"
+          }
+        },
+        {
+          "client_id": "783762743706-l4embaje2pfh1i3u8tdgjb9n7m5ah6sn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUucK1y03JsDHUX5C_Ja3EjV81Z1jVj8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783762743706-l4embaje2pfh1i3u8tdgjb9n7m5ah6sn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

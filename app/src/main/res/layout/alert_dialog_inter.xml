@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent">
+  <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/linPerm"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/blanco"
+          android:visibility="visible"
+     >
+    <LinearLayout
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center|bottom"
+            app:layout_constraintTop_toTopOf="parent">
+      <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:scaleType="centerCrop"
+              android:layout_marginBottom="@dimen/_30sdp"
+              android:src="@drawable/ic_plug"
+      />
+    </LinearLayout>
+
+
+    <TextView
+            android:id="@+id/tituloPermisos"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/no_posees_conexi_n"
+            android:textColor="@color/negro_grafito"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+
+    <TextView
+            android:id="@+id/textMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:gravity="center"
+            android:textColor="@color/grey_80"
+            android:text="@string/tu_conexi_n"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloPermisos"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMensaje">
+      <Button
+              android:id="@+id/btnAceptar"
+              android:layout_width="@dimen/_230sdp"
+              android:layout_height="@dimen/_40sdp"
+              android:layout_marginTop="8dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginEnd="8dp"
+              android:background="@drawable/border_button"
+              android:text="@string/continuar"
+              android:textColor="@color/blanco"
+              android:textSize="@dimen/_14sdp"
+              android:textAllCaps="false"
+              tools:ignore="SpUsage"/>
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
