@@ -21,7 +21,7 @@ Como puedo usar este proyecto:
 El proyecto usa patron de diseño MVP por lo que se recomienda conocimiento previo del patron para comprender la complejidad del desarrollo, ademas del uso de Dagguer2 como inyector de dependencias.
 
 
-### Libreias
+### Librerias
 
 PokeGroup hace uso de librerias para facilitar el desarrollo, estas son algunas de las librerias usadas
 
@@ -58,6 +58,6 @@ Licencia
 MIT
 
 
-**Free Software, Hell Yeah!**
+**Free Software
 
 
