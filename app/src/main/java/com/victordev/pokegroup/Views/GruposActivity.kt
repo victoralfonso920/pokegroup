@@ -63,6 +63,7 @@ class GruposActivity : AppCompatActivity() {
         dataReference = FirebaseDatabase.getInstance().reference
         btnAtrasG.setOnClickListener { finish() }
         modeDark()
+
     }
 
     override fun onStart() {
@@ -266,11 +267,11 @@ class GruposActivity : AppCompatActivity() {
     }
     fun onShareClicked(id:String) {
         val link = DynamicLinksUtil.generateContentLink(device,id)
+        //val url = URLDecoder.decode(link.toString(),"UTF-8")
         val url = URLDecoder.decode(link.toString(),"UTF-8")
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_TEXT, url)
-
         startActivity(Intent.createChooser(intent, "Share Link"))
     }
 

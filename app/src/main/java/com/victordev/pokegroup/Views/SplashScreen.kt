@@ -101,15 +101,11 @@ class SplashScreen : AppCompatActivity() {
         }.addOnSuccessListener {
             // deep link
             if (it != null) {
-                println(it.link.getQueryParameter("movie"))
+                println(it.link)
             }
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-
-    }
     @SuppressLint("SetTextI18n")
     fun modeDark(){
 
