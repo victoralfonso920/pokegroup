@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gruposview"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".Views.GruposActivity">
+    <LinearLayout
+            android:id="@+id/btnAtrasG"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            android:layout_marginStart="8dp">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/FloatingMyLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/redball"
+                app:srcCompat="@drawable/ic_back"
+                app:fabCustomSize="@dimen/_35sdp"
+                app:fabSize="auto"
+                app:maxImageSize="@dimen/_20sdp"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:gravity="bottom|left"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btnAtrasG"
+            app:layout_constraintStart_toEndOf="@+id/btnAtrasG" android:layout_marginStart="8dp">
+
+        <TextView
+                android:id="@+id/textpokedexGr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grupos_pokemon"
+                android:layout_marginBottom="@dimen/_minus5sdp"
+                android:textColor="@color/grey_80"
+                android:textSize="@dimen/_20sdp"
+        />
+        <TextView
+                android:id="@+id/textpokemon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:text="@string/grupos_creados"
+                android:textColor="@color/grey_80"
+                android:textSize="@dimen/_10sdp"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/linErrorGru"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <ImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:src="@drawable/pokemon_error"/>
+        <TextView
+                android:id="@+id/textErrorGru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_15sdp"
+                android:text="@string/sin_grupos"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            android:scrollingCache="true"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
