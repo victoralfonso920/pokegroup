@@ -10,7 +10,7 @@ pokegroup es un proyecto de informacion y pruebas con el uso de datos de la poke
 # Que puedo encontrar!
 
   - Informacion de pokemons segun su region
-  - creacion de grupos de pokemon (aun pendiente)
+  - creacion de grupos de pokemon 
 
 
 Como puedo usar este proyecto:
@@ -51,6 +51,8 @@ Pokegroup requires SDK Android actualizado, Gradle 3.3.2 o superior y Android St
 
  - Este proyecto no cuenta con pruebas Unitarias.
  - Se usan recursos extra para dar vistosidad al diseño del proyecto. 
+ - se usa dynamic link de firebase como deeplink (falla en el envio de parametros)
+ - se genero una confusion en una observacion que se tomo como restriccion de no usar fragments por lo cual el flujo solo esta    generado por actividades.
 
 Licencia
 ----
