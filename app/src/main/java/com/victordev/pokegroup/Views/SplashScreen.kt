@@ -18,11 +18,13 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.victordev.pokegroup.R
 import com.victordev.pokegroup.utils.App
 import com.victordev.pokegroup.utils.Utils
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 import retrofit2.Retrofit
+import timber.log.Timber
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import javax.inject.Inject
@@ -93,6 +95,20 @@ class SplashScreen : AppCompatActivity() {
         modeDark()
         timer()
        // getHash()
+        FirebaseDynamicLinks.getInstance().getDynamicLink(intent).addOnFailureListener {
+            // error
+            Timber.e(it)
+        }.addOnSuccessListener {
+            // deep link
+            if (it != null) {
+                println(it.link.getQueryParameter("movie"))
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
     }
     @SuppressLint("SetTextI18n")
     fun modeDark(){

@@ -21,11 +21,29 @@
             tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator"
             tools:replace="android:allowBackup"
             tools:targetApi="m">
-        <activity android:name=".Views.PokemonActivity">
+        <activity android:name=".Views.GruposActivity"
+                  android:screenOrientation="portrait"
+                  tools:ignore="InnerclassSeparator">
         </activity>
-        <activity android:name=".Views.DetailRegion">
+        <activity
+                android:name=".Views.DetailPokemon"
+                android:screenOrientation="portrait"
+                tools:ignore="InnerclassSeparator">
         </activity>
-        <activity android:name=".Views.HomeActivity">
+        <activity
+                android:name=".Views.PokemonActivity"
+                android:screenOrientation="portrait"
+                tools:ignore="InnerclassSeparator">
+        </activity>
+        <activity
+                android:name=".Views.DetailRegion"
+                android:screenOrientation="portrait"
+                tools:ignore="InnerclassSeparator">
+        </activity>
+        <activity
+                android:name=".Views.HomeActivity"
+                android:screenOrientation="portrait"
+                tools:ignore="InnerclassSeparator">
         </activity>
 
         <meta-data
@@ -55,10 +73,18 @@
                 android:name=".Views.SplashScreen"
                 android:screenOrientation="portrait"
                 tools:ignore="InnerclassSeparator">
-            <intent-filter>
+            <intent-filter
+                    android:autoVerify="true"
+                    tools:targetApi="23">
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="pokegrop.page.link" android:scheme="https"/>
+                <data android:host="pokegrop.page.link" android:scheme="http"/>
+                <data android:host="pokegro.com" android:scheme="https"/>
+                <data android:host="pokegro.com" android:scheme="http"/>
             </intent-filter>
         </activity>
         <activity

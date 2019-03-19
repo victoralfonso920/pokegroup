@@ -5,10 +5,7 @@ import android.content.Intent
 import com.facebook.CallbackManager
 import com.facebook.login.widget.LoginButton
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.victordev.pokegroup.ModelSerializado.Pokedexe
-import com.victordev.pokegroup.ModelSerializado.PokemonEntry
-import com.victordev.pokegroup.ModelSerializado.Result
-import com.victordev.pokegroup.ModelSerializado.Results
+import com.victordev.pokegroup.ModelSerializado.*
 import com.victordev.pokegroup.Views.MainActivity
 
 interface InterfaceMain {
@@ -87,6 +84,18 @@ interface InterfaceMain {
         fun cargarData(mDatosReservas: List<Results>)
     }
     interface InteractorPokemon{
+        fun CallPokemons(conexion:Boolean,api:apiGexRetrofit,ctx: Context)
+
+    }
+    //interface pokemon activity
+    interface ViewDetPokemon{
+        fun cargarData(mDatosReservas: PokemonData)
+    }
+    interface PresenterDetPokemon{
+        fun CallPokemons(conexion:Boolean,api:apiGexRetrofit,ctx:Context)
+        fun cargarData(mDatosReservas: PokemonData)
+    }
+    interface InteractorDetPokemon{
         fun CallPokemons(conexion:Boolean,api:apiGexRetrofit,ctx: Context)
 
     }

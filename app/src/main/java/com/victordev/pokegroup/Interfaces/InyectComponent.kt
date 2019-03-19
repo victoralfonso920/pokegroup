@@ -14,4 +14,6 @@ interface InyectComponent {
     fun inject(activity: HomeActivity)
     fun inject(activity: DetailRegion)
     fun inject(activity: PokemonActivity)
+    fun inject(activity: DetailPokemon)
+    fun inject(activity: GruposActivity)
 }

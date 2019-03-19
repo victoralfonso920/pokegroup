@@ -70,6 +70,8 @@ class RecyclerRegionesHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
             }
 
             holder.itemView.setOnClickListener {
+                Utils.selectedPositions.clear()
+                Utils.pokelist.clear()
                 (ctx as HomeActivity).irOpcionesApp(DetailRegion::class.java,regiones[position].name,regiones[position].url)
             }
 

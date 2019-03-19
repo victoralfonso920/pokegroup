@@ -1,34 +1,44 @@
 package com.victordev.pokegroup.Adapters
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.victordev.pokegroup.ModelSerializado.PokemonEntry
 import com.victordev.pokegroup.R
+import com.victordev.pokegroup.Views.DetailPokemon
 import com.victordev.pokegroup.utils.ItemAnimation
 import com.victordev.pokegroup.utils.Utils
 import java.util.regex.Pattern
+
+
+
 
 
 class RecyclerPokedexHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     //instancia de controles
     val imagen: ImageView = itemView.findViewById(R.id.imagen)
+    val imgpokeBall: ImageView = itemView.findViewById(R.id.imgpokeBall)
     val nombre: TextView = itemView.findViewById(R.id.nombre)
     val textRegiones: TextView = itemView.findViewById(R.id.textRegiones)
+    val margen: LinearLayout = itemView.findViewById(R.id.margen)
 
     //adapters
     class RecyclerPokedexAdapter(
         private val pokedex: List<PokemonEntry>,
         private val ctx: Context,
         private val  animation_type: Int,
-        private val  region: String
+        private val  region: String,
+        private var selectedPositions: MutableList<Int>
     )
         : RecyclerView.Adapter<RecyclerPokedexHolder>() {
 
@@ -56,11 +66,36 @@ class RecyclerPokedexHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
             holder.textRegiones.typeface = mmedium
             holder.nombre.text = pokedex[position].pokemon_species.name.capitalize()
             holder.textRegiones.text = "Region $region"
-           val number = getlastNumbers(pokedex[position].pokemon_species.url)
+            val number = getlastNumbers(pokedex[position].pokemon_species.url)
             util.fondoUrl(ctx,"${util.decrypt(util.PREFIJO_IMG)}$number.png",holder.imagen)
-            println("${util.PREFIJO_IMG}$number.png")
 
+            holder.itemView.setOnClickListener {
+                irOpcionesApp(DetailPokemon::class.java,number,region)
+            }
+            actualizaUIXNoSave(number.toInt(),holder.imgpokeBall)
 
+            if(position == itemCount -1){
+                holder.margen.visibility = View.VISIBLE
+            }
+        }
+
+        fun actualizaUIXNoSave(id_sub_servicio: Int, imgpokeBall: ImageView){
+            val selectedIndex = selectedPositions.indexOf(id_sub_servicio)
+            if (selectedIndex > -1) {
+                imgpokeBall.visibility = View.VISIBLE
+            } else {
+                imgpokeBall.visibility = View.GONE
+            }
+        }
+
+        //funcion de ir a actividad sin cerrar home
+        fun irOpcionesApp(act: Class<*>,dta1:String,dta2:String){
+            val activity = ctx as Activity
+            val intent = Intent(ctx, act)
+            intent.putExtra("data1",dta1)
+            intent.putExtra("data2",dta2)
+            activity.startActivity(intent)
+            activity.overridePendingTransition(R.anim.fade_in_trns, R.anim.fade_out_trns)
         }
         override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
             recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

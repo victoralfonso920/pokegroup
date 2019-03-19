@@ -69,7 +69,7 @@ class PokemonActivity : AppCompatActivity(), InterfaceMain.ViewPokemon {
         if(mDatosPokemon.isNotEmpty()){
             linErrorPo.visibility = View.GONE
             ListaPokemon.visibility = View.VISIBLE
-            ListaPokemon.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 2)
+            ListaPokemon.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, 3)
             val adapter =
                 RecyclerPokemonAllHolder.RecyclerPokemonAllAdapter(mDatosPokemon, ctx!!, animation_type)
             ListaPokemon.adapter = adapter

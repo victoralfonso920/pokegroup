@@ -31,7 +31,31 @@
     <string name="pokedex">Pokedex</string>
     <string name="pokemon_all">Todos los pokemon</string>
     <string name="cerrar_sesi_n">Cerrar sesión</string>
-    <string name="help1">Menu de cambios de temas de la app y opcion de mostrar todos los pokemos existentes o grupos creados</string>
+    <string name="help1">Menu de cambios de temas de la app y opcion de mostrar todos los pokemos existentes o grupos
+        creados
+    </string>
     <string name="help2">Puedes seleccionar regiones y ver los pokemon por cada region</string>
     <string name="help3">Puedes revisar tu perfil y \ncerrar tu sesión</string>
+    <string name="agregar_a_grupo">AGREGAR A\nGRUPO POKEMON</string>
+    <string name="info">Informacion de pokedex</string>
+    <string name="remover">REMOVER DE\nGRUPO POKEMON</string>
+    <string name="crear_grupo_pokemon">Crear grupo pokemon</string>
+    <string name="agrega_un_nombre_a_este_grupo">Agrega un nombre a este grupo</string>
+    <string name="ingrese_un_nombre">Ingrese un nombre</string>
+    <string name="grupos_pokemon">Grupos Pokemon</string>
+    <string name="grupos_creados">Grupos creados</string>
+    <string name="nombre">nombre</string>
+    <string name="sin_grupos">Sin grupos</string>
+    <string name="actu_grupo">Actualizar grupo</string>
+
+    <string name="config_host" translatable="false">www.pokegro.com</string>
+    <string name="config_path_salads" translatable="false">data</string>
+    <string name="config_scheme" translatable="false">http</string>
+    <string name="invite">Revisa mi Grupo Pokemon</string>
+    <string name="copiar_grupo">Puedes copiar mi grupo pokemon</string>
+    <string name="migrupo">Mi grupo pokemon</string>
+    <string name="server_deep">https://pokegro.com/</string>
+    <string name="urlImg">
+        http://pngriver.com/wp-content/uploads/2018/03/Download-Pokeball-PNG-Image-For-Designing-Purpose.png
+    </string>
 </resources>

@@ -87,10 +87,18 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.7'
 
     //firebase auth
-    implementation 'com.google.firebase:firebase-auth:16.1.0'
+    implementation 'com.google.firebase:firebase-auth:16.2.0'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     //Facebook SignIn
     implementation 'com.facebook.android:facebook-login:4.40.0'
+    implementation 'com.github.marcinmoskala:ArcSeekBar:0.34'
+    implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.google.firebase:firebase-invites:16.1.0'
+    implementation 'com.balysv:material-ripple:1.0.2'                  // ripple effect
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.google.firebase:firebase-dynamic-links:16.1.7'
+
+
 
 }
 apply plugin: 'com.google.gms.google-services'

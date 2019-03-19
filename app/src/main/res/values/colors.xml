@@ -22,6 +22,8 @@
     <color name="naranja">#F86A20</color>
     <color name="ocre">#9B0E5C</color>
     <color name="rosado">#D669A6</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparencia">#59656262</color>
 
     <color name="grey_40">#999999</color>
     <color name="grey_60">#666666</color>
@@ -33,5 +35,6 @@
     <color name="purple">#C469E3</color>
     <color name="blue">#7E8DEF</color>
     <color name="trasparent_help">#7F000000</color>
+    <color name="colorLinea">#DFDFDF</color>
 
 </resources>

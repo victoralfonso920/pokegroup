@@ -12,7 +12,10 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -50,10 +53,13 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
     var presenter: InterfaceMain.PresenterHome? = null
     //variable para api de descraga
     var apiService: apiGexRetrofit? = null
-    var logox :Typeface? = null
-    var mlight :Typeface? = null
-    var mmedium:Typeface? = null
-    var mregular :Typeface? = null
+    var logox: Typeface? = null
+    var mlight: Typeface? = null
+    var mmedium: Typeface? = null
+    var mregular: Typeface? = null
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -70,10 +76,10 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
         //obtencion de conexion del dispositivo
         conexion = funciones.isNetworkAvailable(ctx!!)
         //fuentes
-         logox = Typeface.createFromAsset(assets, "font/Fredoka.ttf")
-         mlight = Typeface.createFromAsset(assets, "font/MontserratLight.ttf")
-         mmedium = Typeface.createFromAsset(assets, "font/MontserratMedium.ttf")
-         mregular = Typeface.createFromAsset(assets, "font/MontserratRegular.ttf")
+        logox = Typeface.createFromAsset(assets, "font/Fredoka.ttf")
+        mlight = Typeface.createFromAsset(assets, "font/MontserratLight.ttf")
+        mmedium = Typeface.createFromAsset(assets, "font/MontserratMedium.ttf")
+        mregular = Typeface.createFromAsset(assets, "font/MontserratRegular.ttf")
 
         textEventos.typeface = logox
         textView.typeface = mregular
@@ -81,16 +87,9 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
         textMenu1.typeface = mmedium
         textMenu2.typeface = mmedium
         textMenu3.typeface = mmedium
-        txthelp1.typeface = mmedium
-        txthelp2.typeface = mmedium
-        txthelp3.typeface = mmedium
 
-        close.setOnClickListener {
-            linHelp.visibility = View.GONE
-            guardarConfiguracion(true, Utils().isdark(ctx!!))
-        }
         if (!Utils.isFirstLoad) {
-            linHelp.visibility = View.VISIBLE
+            DialogoHelp()
         }
         //asignacion de avatar default
         funciones.fondoCirle(ctx!!, R.drawable.pikachu, avatar)
@@ -104,27 +103,28 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
             guardarConfiguracion(Utils().isloaded(ctx!!), Utils.modeDark)
         }
         FloatingPokemon.setOnClickListener {
-            irOpcionesApp(PokemonActivity::class.java,"","")
+            irOpcionesApp(PokemonActivity::class.java, "", "")
         }
         FloatingGroups.setOnClickListener {
-            Toast.makeText(ctx!!, "grupos", Toast.LENGTH_LONG).show()
+            irOpcionesApp(GruposActivity::class.java, "", "")
         }
         modeDark()
         //verificar usuario
         val mUser = FirebaseAuth.getInstance().currentUser
         if (mUser != null) {
             textEventos.append(" ${mUser.displayName}")
-            if(mUser.photoUrl.toString().isNotEmpty()){
+            if (mUser.photoUrl.toString().isNotEmpty()) {
                 funciones.fondoCirleURL(ctx!!, mUser.photoUrl.toString(), avatar)
             }
         }
-        presenter!!.CallRegions(conexion!!,apiService!!,ctx!!)
+        presenter!!.CallRegions(conexion!!, apiService!!, ctx!!)
     }
 
     //guardar conf
     private fun guardarConfiguracion(load: Boolean, dark: Boolean) {
         Utils().modoDark(ctx!!, dark, load)
     }
+
     //temas de la app
     @SuppressLint("SetTextI18n")
     fun modeDark() {
@@ -166,15 +166,17 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
             }
         }
     }
+
     //funcion de ir a actividad sin cerrar home
-    fun irOpcionesApp(act: Class<*>,dta1:String,dta2:String){
+    fun irOpcionesApp(act: Class<*>, dta1: String, dta2: String) {
         val intent = Intent(applicationContext, act)
-        intent.putExtra("data1",dta1)
-        intent.putExtra("data2",dta2)
+        intent.putExtra("data1", dta1)
+        intent.putExtra("data2", dta2)
         startActivity(intent)
         overridePendingTransition(R.anim.fade_in_trns, R.anim.fade_out_trns)
 
     }
+
     //carga de datos de regiones
     override fun cargarData(mDatosReservas: List<Result>) {
         val adapter = RecyclerRegionesHolder.RecyclerRegionesAdapter(mDatosReservas, ctx!!)
@@ -195,7 +197,8 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
             snapHelper.attachToRecyclerView(view_pager1)
         }
     }
-        //mostrar dialogo de profile
+
+    //mostrar dialogo de profile
     fun showDialogProfile() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE) // before
@@ -207,14 +210,14 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
         val btnSesion = dialog.findViewById<Button>(R.id.btnAceptar)
         nombreCand.typeface = logox
         textDet.typeface = mlight
-       //obtener datos de usuario
+        //obtener datos de usuario
         val mUser = FirebaseAuth.getInstance().currentUser
         if (mUser != null) {
             nombreCand.text = mUser.displayName
             textDet.text = mUser.email
-            if(mUser.photoUrl.toString().isNotEmpty()){
+            if (mUser.photoUrl.toString().isNotEmpty()) {
                 funciones.fondoCirleURL(ctx!!, mUser.photoUrl.toString(), imagen)
-            }else{
+            } else {
                 funciones.fondoCirle(ctx!!, R.drawable.pikachu, imagen)
             }
         }
@@ -229,6 +232,7 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
         dialog.setCancelable(true)
         dialog.show()
     }
+
     //funcion de envio a actividad
     fun irActividad() {
         val intent = Intent(applicationContext, MainActivity::class.java)
@@ -240,4 +244,23 @@ class HomeActivity : AppCompatActivity(), InterfaceMain.ViewHome {
         overridePendingTransition(R.anim.fade_in_trns, R.anim.fade_out_trns)
         finish()
     }
+
+    fun DialogoHelp() {
+        val dialog = Dialog(this, android.R.style.Theme_Translucent_NoTitleBar)
+        dialog.setContentView(R.layout.dialog_help)
+        val txthelp1: TextView = dialog.findViewById(R.id.txthelp1)
+        val txthelp2: TextView = dialog.findViewById(R.id.txthelp2)
+        val txthelp3: TextView = dialog.findViewById(R.id.txthelp3)
+        val close: ImageView = dialog.findViewById(R.id.close)
+        txthelp1.typeface = mmedium
+        txthelp2.typeface = mmedium
+        txthelp3.typeface = mmedium
+
+        close.setOnClickListener {
+            guardarConfiguracion(true, Utils().isdark(ctx!!))
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
 }

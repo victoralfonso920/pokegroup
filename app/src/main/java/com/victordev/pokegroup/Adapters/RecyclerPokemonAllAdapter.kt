@@ -1,7 +1,9 @@
 package com.victordev.pokegroup.Adapters
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.victordev.pokegroup.ModelSerializado.Results
 import com.victordev.pokegroup.R
+import com.victordev.pokegroup.Views.DetailPokemon
 import com.victordev.pokegroup.utils.ItemAnimation
 import com.victordev.pokegroup.utils.Utils
 import java.util.regex.Pattern
@@ -51,15 +54,31 @@ class RecyclerPokemonAllHolder(itemView: View) : RecyclerView.ViewHolder(itemVie
             //fuentes
             val logox = Typeface.createFromAsset(ctx.assets, "font/Fredoka.ttf")
             val mmedium = Typeface.createFromAsset(ctx.assets, "font/MontserratMedium.ttf")
+            var number = getlastNumbers(pokedex[position].url)
+            util.fondoUrl(ctx,"${util.decrypt(util.PREFIJO_IMG)}$number.png",holder.imagen)
+            val numberOrigi = number
+            when(number.toInt()){
+                in 1..9 ->number = "00$number"
+                in 10..99 ->number = "0$number"
+            }
             holder.nombre.typeface = logox
             holder.textRegiones.typeface = mmedium
             holder.nombre.text = pokedex[position].name.capitalize()
-            holder.textRegiones.text = "Pokedex"
-           val number = getlastNumbers(pokedex[position].url)
-            util.fondoUrl(ctx,"${util.decrypt(util.PREFIJO_IMG)}$number.png",holder.imagen)
-            println("${util.PREFIJO_IMG}$number.png")
+            holder.textRegiones.text = "Pokemon #$number"
 
+            holder.itemView.setOnClickListener {
+                irOpcionesApp(DetailPokemon::class.java,numberOrigi,"all")
+            }
 
+        }
+        //funcion de ir a actividad sin cerrar home
+        fun irOpcionesApp(act: Class<*>,dta1:String,dta2:String){
+            val activity = ctx as Activity
+            val intent = Intent(ctx, act)
+            intent.putExtra("data1",dta1)
+            intent.putExtra("data2",dta2)
+            activity.startActivity(intent)
+            activity.overridePendingTransition(R.anim.fade_in_trns, R.anim.fade_out_trns)
         }
         override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
             recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
